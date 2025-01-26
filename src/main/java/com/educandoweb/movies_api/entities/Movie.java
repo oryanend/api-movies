@@ -25,15 +25,21 @@ public class Movie implements Serializable {
     private LocalDate releaseDate;
     private Double reviewRating;
 
+    //Association
+    @ManyToOne
+    @JoinColumn(name = "category_id")
+    private Category category;
+
     public Movie() {
     }
 
-    public Movie(Long id, String title, String description, LocalDate releaseDate, Double reviewRating) {
+    public Movie(Long id, String title, String description, LocalDate releaseDate, Double reviewRating, Category category) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.releaseDate = releaseDate;
         this.reviewRating = reviewRating;
+        this.category = category;
     }
 
     public Long getId() {
@@ -74,6 +80,14 @@ public class Movie implements Serializable {
 
     public void setReviewRating(Double reviewRating) {
         this.reviewRating = reviewRating;
+    }
+
+    public Category getCategory() {
+        return category;
+    }
+
+    public void setCategory(Category category) {
+        this.category = category;
     }
 
     @Override
