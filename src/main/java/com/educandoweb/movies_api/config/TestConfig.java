@@ -1,9 +1,11 @@
 package com.educandoweb.movies_api.config;
 
 import com.educandoweb.movies_api.entities.Category;
+import com.educandoweb.movies_api.entities.Comment;
 import com.educandoweb.movies_api.entities.Movie;
 import com.educandoweb.movies_api.entities.User;
 import com.educandoweb.movies_api.repositories.CategoryRepository;
+import com.educandoweb.movies_api.repositories.CommentRepository;
 import com.educandoweb.movies_api.repositories.MovieRepository;
 import com.educandoweb.movies_api.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +38,9 @@ public class TestConfig implements CommandLineRunner {
     @Autowired
     private UserRepository userRepository;
 
+    @Autowired
+    private CommentRepository commentRepository;
+
     @Override
     public void run(String... args) throws Exception {
 
@@ -45,9 +50,11 @@ public class TestConfig implements CommandLineRunner {
 
         User user = new User(null, "Ryan", realeaseDate, "Brasileiro");
 
+        Comment comment = new Comment(null, "ASADA", user, Instant.now(), movie);
 
         categoryRepository.save(category);
         movieRepository.saveAll(Arrays.asList(movie));
         userRepository.save(user);
+        commentRepository.save(comment);
     }
 }

@@ -7,7 +7,9 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 @Entity
 @Table(name = "tb_user")
@@ -26,9 +28,14 @@ public class User implements Serializable {
     private String nacionality;
 
     // Associations
+    @JsonIgnore
     @ManyToOne
     @JoinColumn(name = "movie_id")
     private Movie movie;
+
+    @OneToMany
+    @JoinColumn(name = "comment_id")
+    private Set<Comment> comments = new HashSet<>();
 
     public User() {
     }
