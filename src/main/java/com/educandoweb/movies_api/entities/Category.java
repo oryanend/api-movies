@@ -4,8 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.io.Serializable;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 @Entity
 @Table(name = "tb_category")
@@ -19,8 +18,8 @@ public class Category implements Serializable {
 
     //Association
     @JsonIgnore
-    @Transient
-    private List<Movie> movies;
+    @OneToMany(mappedBy = "category")
+    private Set<Movie> movies = new HashSet<>();
 
     public Category() {
     }
@@ -46,27 +45,24 @@ public class Category implements Serializable {
         this.name = name;
     }
 
-    public List<Movie> getMovies() {
+    public Set<Movie> getMovies() {
         return movies;
     }
 
-    public void setMovies(List<Movie> movies) {
+    public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }
-
-
-
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Category category = (Category) o;
-        return Objects.equals(id, category.id);
+        return Objects.equals(id, category.id) && Objects.equals(name, category.name) && Objects.equals(movies, category.movies);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hashCode(id);
+        return Objects.hash(id, name);
     }
 }

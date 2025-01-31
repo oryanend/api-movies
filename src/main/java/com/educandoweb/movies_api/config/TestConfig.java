@@ -2,8 +2,10 @@ package com.educandoweb.movies_api.config;
 
 import com.educandoweb.movies_api.entities.Category;
 import com.educandoweb.movies_api.entities.Movie;
+import com.educandoweb.movies_api.entities.User;
 import com.educandoweb.movies_api.repositories.CategoryRepository;
 import com.educandoweb.movies_api.repositories.MovieRepository;
+import com.educandoweb.movies_api.repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.cglib.core.Local;
@@ -27,16 +29,25 @@ public class TestConfig implements CommandLineRunner {
 
     DateTimeFormatter fmt = DateTimeFormatter.ofPattern("dd/MM/yyyy");
     LocalDate realeaseDate = LocalDate.parse("20/12/2003",fmt);
+
     @Autowired
     private CategoryRepository categoryRepository;
 
+    @Autowired
+    private UserRepository userRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
         Category category = new Category(null, "Terror");
+
         Movie movie = new Movie(null, "Test", "Descrição", realeaseDate, 12.4, category);
+
+        User user = new User(null, "Ryan", realeaseDate, "Brasileiro");
 
 
         categoryRepository.save(category);
-        movieRepository.save(movie);
+        movieRepository.saveAll(Arrays.asList(movie));
+        userRepository.save(user);
     }
 }
