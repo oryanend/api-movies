@@ -4,6 +4,7 @@ import com.educandoweb.movies_api.entities.Category;
 import com.educandoweb.movies_api.repositories.CategoryRepository;
 import com.educandoweb.movies_api.services.exceptions.DatabaseException;
 import com.educandoweb.movies_api.services.exceptions.ResourceNotFoundException;
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -45,8 +46,12 @@ public class CategoryService {
     }
 
     public Category update(Long id,Category category){
-        Category entity = categoryRepository.getReferenceById(id);
-        updateDate(entity, category);
-        return categoryRepository.save(entity);
+        try{
+            Category entity = categoryRepository.getReferenceById(id);
+            updateDate(entity, category);
+            return categoryRepository.save(entity);
+        } catch (EntityNotFoundException e){
+            throw new ResourceNotFoundException(id);
+        }
     }
 }
