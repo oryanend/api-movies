@@ -12,8 +12,8 @@ import java.util.Objects;
 import java.util.Set;
 
 @Entity
-@Table(name = "tb_user")
-public class User implements Serializable {
+@Table(name = "tb_actor")
+public class Actor implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -37,10 +37,10 @@ public class User implements Serializable {
     @JoinColumn(name = "comment_id")
     private Set<Comment> comments = new HashSet<>();
 
-    public User() {
+    public Actor() {
     }
 
-    public User(Long id, String name, LocalDate birthday, String nacionality) {
+    public Actor(Long id, String name, LocalDate birthday, String nacionality) {
         this.id = id;
         this.name = name;
         this.birthday = birthday;
@@ -91,8 +91,8 @@ public class User implements Serializable {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(id, user.id);
+        Actor Actor = (Actor) o;
+        return Objects.equals(id, Actor.id);
     }
 
     @Override

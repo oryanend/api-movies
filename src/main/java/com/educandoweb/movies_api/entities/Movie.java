@@ -35,8 +35,8 @@ public class Movie implements Serializable {
 
     @JsonIgnore
     @ManyToMany
-    @JoinTable(name = "tb_movie_user", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
-    private Set<User> users = new HashSet<>();
+    @JoinTable(name = "tb_movie_actor", joinColumns = @JoinColumn(name = "movie_id"), inverseJoinColumns = @JoinColumn(name = "actor_id"))
+    private Set<Actor> actors = new HashSet<>();
 
     @OneToMany(mappedBy = "movie", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Comment> comments = new HashSet<>();
@@ -101,12 +101,12 @@ public class Movie implements Serializable {
         this.category = category;
     }
 
-    public Set<User> getUsers() {
-        return users;
+    public Set<Actor> getActor() {
+        return actors;
     }
 
-    public void setUsers(Set<User> users) {
-        this.users = users;
+    public void setActors(Set<Actor> actors) {
+        this.actors = actors;
     }
 
     public Set<Comment> getComments() {

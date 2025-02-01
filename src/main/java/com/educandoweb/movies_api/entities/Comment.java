@@ -19,7 +19,7 @@ public class Comment implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    private User user;
+    private Actor actor;
 
     private Instant moment;
 
@@ -31,10 +31,10 @@ public class Comment implements Serializable {
 
     public Comment() {}
 
-    public Comment(Long id, String text, User user, Instant moment, Movie movie) {
+    public Comment(Long id, String text, Actor actor, Instant moment, Movie movie) {
         this.id = id;
         this.text = text;
-        this.user = user;
+        this.actor = actor;
         this.moment = moment;
         this.movie = movie;
     }
@@ -55,12 +55,12 @@ public class Comment implements Serializable {
         this.text = text;
     }
 
-    public User getUser() {
-        return user;
+    public Actor getActor() {
+        return actor;
     }
 
-    public void setUser(User user) {
-        this.user = user;
+    public void setActor(Actor actor) {
+        this.actor = actor;
     }
 
     public Instant getMoment() {
