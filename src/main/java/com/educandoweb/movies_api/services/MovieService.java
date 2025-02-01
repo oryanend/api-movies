@@ -21,4 +21,8 @@ public class MovieService {
         Optional<Movie> obj = movieRepository.findById(id);
         return obj.get();
     }
+
+    public Movie insert(Movie movie){
+        return movieRepository.save(movie);
+    }
 }

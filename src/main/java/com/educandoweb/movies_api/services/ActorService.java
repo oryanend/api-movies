@@ -21,4 +21,8 @@ public class ActorService {
         Optional<Actor> actor = actorRepository.findById(id);
         return actor.orElse(null);
     }
+
+    public Actor insert(Actor actor){
+        return actorRepository.save(actor);
+    }
 }
