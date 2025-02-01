@@ -2,6 +2,7 @@ package com.educandoweb.movies_api.services;
 
 import com.educandoweb.movies_api.entities.Category;
 import com.educandoweb.movies_api.repositories.CategoryRepository;
+import com.educandoweb.movies_api.services.exceptions.ResourceNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +20,7 @@ public class CategoryService {
 
     public Category findById(Long id){
         Optional<Category> obj = categoryRepository.findById(id);
-        return obj.get();
+        return obj.orElseThrow(()-> new ResourceNotFoundException(id));
     }
 
     public Category insert(Category category){
