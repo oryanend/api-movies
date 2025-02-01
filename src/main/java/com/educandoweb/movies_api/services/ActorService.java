@@ -29,4 +29,16 @@ public class ActorService {
     public void delete(Long id){
         actorRepository.deleteById(id);
     }
+
+    private void updateDate(Actor entity, Actor obj){
+        entity.setName(obj.getName());
+        entity.setBirthday(obj.getBirthday());
+        entity.setNacionality(obj.getNacionality());
+    }
+
+    public Actor update(Long id,Actor actor){
+        Actor entity = actorRepository.getReferenceById(id);
+        updateDate(entity, actor);
+        return actorRepository.save(entity);
+    }
 }

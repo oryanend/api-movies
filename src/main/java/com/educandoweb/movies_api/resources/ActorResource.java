@@ -35,8 +35,16 @@ public class ActorResource {
         return ResponseEntity.created(uri).body(actor);
     }
 
+    @DeleteMapping(value = "/{id}")
     public ResponseEntity<Void> delete(@PathVariable Long id){
         actorService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+    @PutMapping(value = "/{id}")
+    public ResponseEntity<Actor> update(@PathVariable Long id, @RequestBody Actor actor){
+        actor = actorService.update(id, actor);
+        return ResponseEntity.ok().body(actor);
+    }
+
 }

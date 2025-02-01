@@ -29,4 +29,14 @@ public class CategoryService {
     public void deleteById(Long id){
       categoryRepository.deleteById(id);
     }
+
+    private void updateDate(Category entity, Category obj){
+        entity.setName(obj.getName());
+    }
+
+    public Category update(Long id,Category category){
+        Category entity = categoryRepository.getReferenceById(id);
+        updateDate(entity, category);
+        return categoryRepository.save(entity);
+    }
 }
