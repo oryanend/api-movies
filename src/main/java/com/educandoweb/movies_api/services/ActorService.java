@@ -25,4 +25,8 @@ public class ActorService {
     public Actor insert(Actor actor){
         return actorRepository.save(actor);
     }
+
+    public void delete(Long id){
+        actorRepository.deleteById(id);
+    }
 }

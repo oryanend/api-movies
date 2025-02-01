@@ -35,4 +35,8 @@ public class ActorResource {
         return ResponseEntity.created(uri).body(actor);
     }
 
+    public ResponseEntity<Void> delete(@PathVariable Long id){
+        actorService.delete(id);
+        return ResponseEntity.noContent().build();
+    }
 }
