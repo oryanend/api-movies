@@ -33,10 +33,6 @@ public class Actor implements Serializable {
     @JoinColumn(name = "movie_id")
     private Movie movie;
 
-    @OneToMany
-    @JoinColumn(name = "comment_id")
-    private Set<Comment> comments = new HashSet<>();
-
     public Actor() {
     }
 
