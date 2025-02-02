@@ -51,6 +51,9 @@ Agora que tudo está configurado, basta iniciar a aplicação!
 mvn spring-boot:run
 ```
 
+A aplicação estará disponível em:
+➡ http://localhost:8080
+
 # Autor
 
 Ryan de Almeida Oliveira
