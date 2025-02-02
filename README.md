@@ -7,6 +7,17 @@ https://api-movies.up.railway.app/
 
 Movies API é uma API RESTful CRUD desenvolvida para gerenciar um blog de filmes. Usuários podem criar, visualizar, atualizar e deletar registros de filmes, além de comentar e avaliar os títulos cadastrados.
 
+
+# Diagrama de Classe
+![ClassDiagram](https://github.com/oryanend/api-movies/blob/main/Assets/ClassDiagramMoviesApi.jpg)
+
+Esse diagrama representa a estrutura do banco de dados da API Movies. Ele define as principais entidades e seus relacionamentos:
+- **User**: Representa os usuários que podem fazer comentários sobre filmes.
+- **Comment**: Armazena os comentários dos usuários nos filmes.
+- **Movie**: São as informações dos filmes, incluindo título, data de lançamento, descrição e nota de avaliação.
+- **Category**: Classifica os filmes em diferentes categorias (ação, comédia, terror, etc.).
+- **Actor**: Representa os atores que participaram nos filmes.
+
 ## Passo a Passo para Rodar a Aplicação Localmente
 A API já está funcionando no link acima, mas caso você queira testá-la localmente no seu computador, siga os passos abaixo:
 
