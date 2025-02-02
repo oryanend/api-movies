@@ -1,5 +1,7 @@
 # 📌 Movies API 🎬
-[![NPM](https://img.shields.io/npm/l/react)](https://github.com/oryanend/api-movies/blob/main/LICENSE) 
+[![NPM](https://img.shields.io/npm/l/react)](https://github.com/oryanend/api-movies/blob/main/LICENSE)
+[![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#)
+[![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=fff)](#)
 
 # Sobre o projeto
 
@@ -20,6 +22,8 @@ Esse diagrama representa a estrutura do banco de dados da API Movies. Ele define
 
 ## Passo a Passo para Rodar a Aplicação Localmente
 A API já está funcionando no link acima, mas caso você queira testá-la localmente no seu computador, siga os passos abaixo:
+
+*`Pré-requisitos: Java 17`*
 
 **1. Clone a aplicação**
 
@@ -64,6 +68,16 @@ mvn spring-boot:run
 
 A aplicação estará disponível em:
 ➡ http://localhost:8080
+
+# Tecnologias utilizadas
+- Java
+- Spring Boot
+- JPA / Hibernate
+- Maven
+- PostgreSQL
+
+## Implantação em produção
+- Backend: Railway
 
 # Autor
 
