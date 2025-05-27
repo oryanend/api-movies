@@ -3,12 +3,9 @@
 [![IntelliJ IDEA](https://img.shields.io/badge/IntelliJIDEA-000000.svg?logo=intellij-idea&logoColor=white)](#)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-6DB33F?logo=springboot&logoColor=fff)](#)
 
-## Nota 
-Atualmente o server do Railway foi desligado, mas ainda sim a API funciona localmente.
-
 # Sobre o projeto
 
-https://api-movies.up.railway.app/
+https://api-movies-production-ac32.up.railway.app
 
 Movies API é uma API RESTful CRUD desenvolvida para gerenciar um blog de filmes. Usuários podem criar, visualizar, atualizar e deletar registros de filmes, além de comentar e avaliar os títulos cadastrados.
 
