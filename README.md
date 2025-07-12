@@ -5,8 +5,6 @@
 
 # Sobre o projeto
 
-https://api-movies-production-ac32.up.railway.app
-
 Movies API é uma API RESTful CRUD desenvolvida para gerenciar um blog de filmes. Usuários podem criar, visualizar, atualizar e deletar registros de filmes, além de comentar e avaliar os títulos cadastrados.
 
 
